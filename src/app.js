@@ -81,6 +81,11 @@ function markCorrect() {
   showAnswerBtn.style.display = "none";
   answerBox.style.display = "none";
 
+  // Sound abspielen
+  const sound = document.getElementById("correctSound");
+  sound.currentTime = 0;
+  sound.play();
+
   // Bild anzeigen
   document.getElementById("correctImage").style.display = "block";
 
@@ -99,6 +104,11 @@ function markWrong() {
   showAnswerBtn.style.display = "none";
   answerBox.style.display = "none";
 
+  // Sound abspielen
+  const sound = document.getElementById("wrongSound");
+  sound.currentTime = 0;
+  sound.play();
+
   // Bild anzeigen
   document.getElementById("wrongImage").style.display = "block";
 
@@ -107,5 +117,6 @@ function markWrong() {
     questionBox.innerHTML = "";
   }, 3000);
 }
+
 
 
