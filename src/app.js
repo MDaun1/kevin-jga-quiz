@@ -132,6 +132,21 @@ function markWrong() {
   }
 }
 
+function triggerGameOver() {
+  // Alles ausblenden
+  document.getElementById("wheel-container").style.display = "none";
+  document.querySelector("button[onclick='spinWheel()']").style.display = "none";
+  categoryBox.style.display = "none";
+  questionBox.style.display = "none";
+  answerBox.style.display = "none";
+  resultButtons.style.display = "none";
+  showAnswerBtn.style.display = "none";
+
+  // Game Over Video anzeigen
+  const video = document.getElementById("gameOverVideo");
+  video.style.display = "block";
+  video.play();
+}
 
 
 
