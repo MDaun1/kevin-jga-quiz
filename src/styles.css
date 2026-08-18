@@ -1,0 +1,56 @@
+body {
+  background: #ff66c4;
+  font-family: "Comic Sans MS", sans-serif;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  margin-top: 20px;
+}
+
+#wheel {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 10px dashed yellow;
+  margin: 20px auto;
+  background: #ffcc00;
+}
+
+button {
+  background: yellow;
+  color: black;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.answer {
+  background: white;
+  color: black;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 10px;
+  cursor: pointer;
+  max-width: 400px;
+}
+
+.answer:hover {
+  transform: scale(1.03);
+}
+
+.correct {
+  background: lime;
+}
+
+.wrong {
+  background: red;
+}
