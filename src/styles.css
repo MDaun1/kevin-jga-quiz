@@ -25,7 +25,7 @@ body {
   height: 0;
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
-  border-top: 40px solid red; /* Spitze zeigt nach unten */
+  border-top: -40px solid red; /* Spitze zeigt nach unten */
   position: absolute;
   bottom: -40px; /* Pfeil unterhalb des Rads */
   left: 50%;
