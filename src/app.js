@@ -80,25 +80,27 @@ function markCorrect() {
   answeredCount++;
   progressBox.innerHTML = `Beantwortet: ${answeredCount} / ${totalQuestions}`;
 
+  wrongStreak = 0; // Reset der falschen Serie
 
   resultButtons.style.display = "none";
   showAnswerBtn.style.display = "none";
   answerBox.style.display = "none";
+
+  // Richtig-Bild anzeigen
+  const correctImg = document.getElementById("correctImage");
+  correctImg.style.display = "block";
 
   // Sound abspielen
   const sound = document.getElementById("correctSound");
   sound.currentTime = 0;
   sound.play();
 
-  // Bild anzeigen
-  document.getElementById("correctImage").style.display = "block";
-
-  // Bild nach 3 Sekunden ausblenden
   setTimeout(() => {
-    document.getElementById("correctImage").style.display = "none";
+    correctImg.style.display = "none";
     questionBox.innerHTML = "";
   }, 3000);
 }
+
 
 function markWrong() {
   answeredCount++;
