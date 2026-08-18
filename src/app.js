@@ -103,14 +103,13 @@ function markCorrect() {
 
 
 function markWrong() {
-  // Falsch beantwortete Fragen erhöhen NICHT den Counter
   wrongStreak++;
 
   resultButtons.style.display = "none";
   showAnswerBtn.style.display = "none";
   answerBox.style.display = "none";
 
-  // Wenn Game Over ausgelöst wird → KEIN Sound, KEIN Falsch-Bild
+  // GAME OVER → kein Sound, kein Bild
   if (wrongStreak >= 3) {
     triggerGameOver();
     return;
@@ -130,6 +129,7 @@ function markWrong() {
     questionBox.innerHTML = "";
   }, 3000);
 }
+
 
 function triggerGameOver() {
   // Alles ausblenden
@@ -155,9 +155,21 @@ function triggerGameOver() {
     document.getElementById("wheel-container").style.display = "block";
     document.querySelector("button[onclick='spinWheel()']").style.display = "inline-block";
 
+    categoryBox.style.display = "block";
+    questionBox.style.display = "block";
+    answerBox.style.display = "none";
+    resultButtons.style.display = "none";
+    showAnswerBtn.style.display = "none";
+
     // falsche Serie zurücksetzen
     wrongStreak = 0;
 
+    // aktuelle Frage löschen
+    currentQuestion = null;
+    questionBox.innerHTML = "";
+    categoryBox.innerHTML = "";
+
   }, 4000);
 }
+
 
