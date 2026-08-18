@@ -1,3 +1,5 @@
+const totalQuestions = allQuestions.length;
+progressBox.innerHTML = `Beantwortet: ${answeredCount} / ${totalQuestions}`;
 const wheel = document.getElementById("wheel");
 const categoryBox = document.getElementById("category");
 const questionBox = document.getElementById("question");
@@ -75,7 +77,8 @@ function markCorrect() {
   remainingQuestions = remainingQuestions.filter(q => q !== currentQuestion);
 
   answeredCount++;
-  progressBox.innerHTML = "Beantwortet: " + answeredCount;
+  progressBox.innerHTML = `Beantwortet: ${answeredCount} / ${totalQuestions}`;
+
 
   resultButtons.style.display = "none";
   showAnswerBtn.style.display = "none";
@@ -98,7 +101,8 @@ function markCorrect() {
 
 function markWrong() {
   answeredCount++;
-  progressBox.innerHTML = "Beantwortet: " + answeredCount;
+  progressBox.innerHTML = `Beantwortet: ${answeredCount} / ${totalQuestions}`;
+
 
   resultButtons.style.display = "none";
   showAnswerBtn.style.display = "none";
