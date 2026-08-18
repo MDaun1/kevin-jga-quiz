@@ -82,7 +82,14 @@ function markCorrect() {
   showAnswerBtn.style.display = "none";
   answerBox.style.display = "none";
 
-  questionBox.innerHTML = "✔️ Richtig beantwortet!";
+  // Vollbild-Bild anzeigen
+  document.getElementById("correctImage").style.display = "block";
+
+  // Bild nach 3 Sekunden ausblenden
+  setTimeout(() => {
+    document.getElementById("correctImage").style.display = "none";
+    questionBox.innerHTML = "";
+  }, 3000);
 }
 
 function markWrong() {
@@ -94,5 +101,13 @@ function markWrong() {
   showAnswerBtn.style.display = "none";
   answerBox.style.display = "none";
 
-  questionBox.innerHTML = "❌ Falsch beantwortet!";
+  // Vollbild-Bild anzeigen
+  document.getElementById("wrongImage").style.display = "block";
+
+  // Bild nach 3 Sekunden ausblenden
+  setTimeout(() => {
+    document.getElementById("wrongImage").style.display = "none";
+    questionBox.innerHTML = "";
+  }, 3000);
 }
+
