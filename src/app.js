@@ -1,3 +1,4 @@
+let wrongStreak = 0;
 const totalQuestions = allQuestions.length;
 progressBox.innerHTML = `Beantwortet: ${answeredCount} / ${totalQuestions}`;
 const wheel = document.getElementById("wheel");
