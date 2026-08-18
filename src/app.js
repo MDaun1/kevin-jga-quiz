@@ -3,15 +3,16 @@ const questionBox = document.getElementById("question");
 const answersBox = document.getElementById("answers");
 
 function spinWheel() {
-  // einfache Fake-Animation: Farbe wechseln
-  wheel.style.transition = "transform 2s ease-out";
-  wheel.style.transform = "rotate(" + (Math.random() * 2000 + 1000) + "deg)";
+  // Zufällige Drehung zwischen 2000° und 6000°
+  const randomSpin = Math.floor(Math.random() * 4000) + 2000;
+
+  wheel.style.transform = `rotate(${randomSpin}deg)`;
 
   setTimeout(() => {
-    wheel.style.transform = "rotate(0deg)";
     loadRandomQuestion();
-  }, 2000);
+  }, 3000);
 }
+
 
 function loadRandomQuestion() {
   const q = questions[Math.floor(Math.random() * questions.length)];
