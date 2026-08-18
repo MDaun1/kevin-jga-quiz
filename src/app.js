@@ -25,25 +25,9 @@ const progressBox = document.getElementById("progress");
 // Counter setzen
 progressBox.innerHTML = `Beantwortet: ${answeredCount} / ${totalQuestions}`;
 
-
-const categories = Object.keys(questions);
-
-// Alle Fragen in ein einziges Array packen
-let allQuestions = [];
-categories.forEach(cat => {
-  questions[cat].forEach(q => {
-    allQuestions.push({ ...q, category: cat });
-  });
-});
-
-// Fragen, die noch nicht richtig beantwortet wurden
-let remainingQuestions = [...allQuestions];
-
-// Zähler
-let answeredCount = 0;
-
 // Aktuelle Frage
 let currentQuestion = null;
+
 
 function spinWheel() {
   answerBox.style.display = "none";
