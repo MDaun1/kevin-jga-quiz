@@ -27,7 +27,7 @@ body {
   border-right: 25px solid transparent;
   border-top: 40px solid red; /* Spitze zeigt nach unten */
   position: absolute;
-  bottom: 240px; /* Pfeil unterhalb des Rads */
+  bottom: 360px; /* Pfeil unterhalb des Rads */
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
