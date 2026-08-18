@@ -72,7 +72,6 @@ function showAnswer() {
 }
 
 function markCorrect() {
-  // Frage aus remainingQuestions entfernen
   remainingQuestions = remainingQuestions.filter(q => q !== currentQuestion);
 
   answeredCount++;
@@ -82,7 +81,7 @@ function markCorrect() {
   showAnswerBtn.style.display = "none";
   answerBox.style.display = "none";
 
-  // Vollbild-Bild anzeigen
+  // Bild anzeigen
   document.getElementById("correctImage").style.display = "block";
 
   // Bild nach 3 Sekunden ausblenden
@@ -93,7 +92,6 @@ function markCorrect() {
 }
 
 function markWrong() {
-  // Falsch beantwortete Fragen bleiben im Pool
   answeredCount++;
   progressBox.innerHTML = "Beantwortet: " + answeredCount;
 
@@ -101,13 +99,13 @@ function markWrong() {
   showAnswerBtn.style.display = "none";
   answerBox.style.display = "none";
 
-  // Vollbild-Bild anzeigen
+  // Bild anzeigen
   document.getElementById("wrongImage").style.display = "block";
 
-  // Bild nach 3 Sekunden ausblenden
   setTimeout(() => {
     document.getElementById("wrongImage").style.display = "none";
     questionBox.innerHTML = "";
   }, 3000);
 }
+
 
