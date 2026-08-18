@@ -104,24 +104,32 @@ function markWrong() {
   answeredCount++;
   progressBox.innerHTML = `Beantwortet: ${answeredCount} / ${totalQuestions}`;
 
+  wrongStreak++;
 
   resultButtons.style.display = "none";
   showAnswerBtn.style.display = "none";
   answerBox.style.display = "none";
+
+  // Falsch-Bild anzeigen
+  const wrongImg = document.getElementById("wrongImage");
+  wrongImg.style.display = "block";
 
   // Sound abspielen
   const sound = document.getElementById("wrongSound");
   sound.currentTime = 0;
   sound.play();
 
-  // Bild anzeigen
-  document.getElementById("wrongImage").style.display = "block";
-
   setTimeout(() => {
-    document.getElementById("wrongImage").style.display = "none";
+    wrongImg.style.display = "none";
     questionBox.innerHTML = "";
   }, 3000);
+
+  // GAME OVER nach 3 falschen Antworten
+  if (wrongStreak >= 3) {
+    triggerGameOver();
+  }
 }
+
 
 
 
