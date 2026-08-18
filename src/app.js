@@ -131,13 +131,6 @@ function markWrong() {
   }, 3000);
 }
 
-
-  // GAME OVER nach 3 falschen Antworten
-  if (wrongStreak >= 3) {
-    triggerGameOver();
-  }
-}
-
 function triggerGameOver() {
   // Alles ausblenden
   document.getElementById("wheel-container").style.display = "none";
@@ -167,5 +160,4 @@ function triggerGameOver() {
 
   }, 4000);
 }
-
 
