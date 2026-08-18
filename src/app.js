@@ -1,6 +1,5 @@
 let wrongStreak = 0;
 const totalQuestions = allQuestions.length;
-progressBox.innerHTML = `Beantwortet: ${answeredCount} / ${totalQuestions}`;
 const wheel = document.getElementById("wheel");
 const categoryBox = document.getElementById("category");
 const questionBox = document.getElementById("question");
@@ -8,6 +7,7 @@ const answerBox = document.getElementById("answer");
 const showAnswerBtn = document.getElementById("showAnswerBtn");
 const resultButtons = document.getElementById("resultButtons");
 const progressBox = document.getElementById("progress");
+progressBox.innerHTML = `Beantwortet: ${answeredCount} / ${totalQuestions}`;
 
 const categories = Object.keys(questions);
 
