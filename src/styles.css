@@ -16,7 +16,9 @@ h1 {
   border: 10px dashed yellow;
   margin: 20px auto;
   background: #ffcc00;
+  transition: transform 3s ease-out;
 }
+
 
 button {
   background: yellow;
