@@ -81,17 +81,15 @@ function markCorrect() {
   answeredCount++;
   progressBox.innerHTML = `Beantwortet: ${answeredCount} / ${totalQuestions}`;
 
-  wrongStreak = 0; // Reset der falschen Serie
+  wrongStreak = 0;
 
   resultButtons.style.display = "none";
   showAnswerBtn.style.display = "none";
   answerBox.style.display = "none";
 
-  // Richtig-Bild anzeigen
   const correctImg = document.getElementById("correctImage");
   correctImg.style.display = "block";
 
-  // Sound abspielen
   const sound = document.getElementById("correctSound");
   sound.currentTime = 0;
   sound.play();
@@ -103,15 +101,20 @@ function markCorrect() {
 }
 
 
-function markWrong() {
-  answeredCount++;
-  progressBox.innerHTML = `Beantwortet: ${answeredCount} / ${totalQuestions}`;
 
+function markWrong() {
+  // Falsch beantwortete Fragen erhöhen NICHT den Counter
   wrongStreak++;
 
   resultButtons.style.display = "none";
   showAnswerBtn.style.display = "none";
   answerBox.style.display = "none";
+
+  // Wenn Game Over ausgelöst wird → KEIN Sound, KEIN Falsch-Bild
+  if (wrongStreak >= 3) {
+    triggerGameOver();
+    return;
+  }
 
   // Falsch-Bild anzeigen
   const wrongImg = document.getElementById("wrongImage");
@@ -126,6 +129,8 @@ function markWrong() {
     wrongImg.style.display = "none";
     questionBox.innerHTML = "";
   }, 3000);
+}
+
 
   // GAME OVER nach 3 falschen Antworten
   if (wrongStreak >= 3) {
@@ -146,8 +151,21 @@ function triggerGameOver() {
   // Game Over Video anzeigen
   const video = document.getElementById("gameOverVideo");
   video.style.display = "block";
+  video.currentTime = 0;
   video.play();
-}
 
+  // Video nach 4 Sekunden ausblenden
+  setTimeout(() => {
+    video.style.display = "none";
+
+    // SPIEL SOLL WEITERGEHEN → alles wieder anzeigen
+    document.getElementById("wheel-container").style.display = "block";
+    document.querySelector("button[onclick='spinWheel()']").style.display = "inline-block";
+
+    // falsche Serie zurücksetzen
+    wrongStreak = 0;
+
+  }, 4000);
+}
 
 
