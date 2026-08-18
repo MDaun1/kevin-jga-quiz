@@ -8,9 +8,12 @@
 
   <h1>Kevins Ultimate JGA Quiz 🎉</h1>
 
+  <!-- Fortschrittsanzeige -->
+  <div id="progress">Beantwortet: 0</div>
+
   <div id="wheel-container">
     <div id="pointer"></div>
-    <img id="wheel" src="src/Glücksrad.png">
+    <img id="wheel" src="src/img/rad.png">
   </div>
 
   <button onclick="spinWheel()">🎰 Glücksrad drehen!</button>
@@ -21,6 +24,11 @@
   <button id="showAnswerBtn" style="display:none;" onclick="showAnswer()">Antwort anzeigen</button>
 
   <div id="answer"></div>
+
+  <div id="resultButtons" style="display:none;">
+    <button id="correctBtn" onclick="markCorrect()">✔️ Richtig beantwortet</button>
+    <button id="wrongBtn" onclick="markWrong()">❌ Falsch beantwortet</button>
+  </div>
 
   <script src="src/questions.js"></script>
   <script src="src/app.js"></script>
