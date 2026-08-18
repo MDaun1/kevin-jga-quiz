@@ -90,8 +90,8 @@ button {
   width: 100vw;
   height: 100vh;
   object-fit: contain;
-  background: rgba(0,0,0,0.8);
-  padding: 50px;
+  background: rgba(0,0,0,0.85);
   display: none;
-  z-index: 9999;
+  z-index: 99999; /* sehr wichtig */
 }
+
