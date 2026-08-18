@@ -1,5 +1,19 @@
 let wrongStreak = 0;
+
+// Fragen laden
+let allQuestions = [];
+const categories = Object.keys(questions);
+categories.forEach(cat => {
+  questions[cat].forEach(q => {
+    allQuestions.push({ ...q, category: cat });
+  });
+});
+
+let remainingQuestions = [...allQuestions];
+let answeredCount = 0;
 const totalQuestions = allQuestions.length;
+
+// DOM-Elemente holen
 const wheel = document.getElementById("wheel");
 const categoryBox = document.getElementById("category");
 const questionBox = document.getElementById("question");
@@ -7,7 +21,10 @@ const answerBox = document.getElementById("answer");
 const showAnswerBtn = document.getElementById("showAnswerBtn");
 const resultButtons = document.getElementById("resultButtons");
 const progressBox = document.getElementById("progress");
+
+// Counter setzen
 progressBox.innerHTML = `Beantwortet: ${answeredCount} / ${totalQuestions}`;
+
 
 const categories = Object.keys(questions);
 
